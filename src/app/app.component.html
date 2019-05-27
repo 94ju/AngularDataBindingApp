@@ -4,8 +4,14 @@
    (bpcreated)=onBlueprintAdded($event)
    ></app-cockpit>
   <div class="row">
+
     <div class="col-xs-12">
-        <app-server-element *ngFor='let serverElement of serverElements' [svrElement]="serverElement">
+      <button class="btn btn-primary" (click)="onChangesFirst()" style="margin-top: 3%">First Change</button>
+        <app-server-element
+         *ngFor='let serverElement of serverElements'
+          [svrElement]="serverElement"
+          [name]="serverElement.name"
+          >
             <p>
                 <strong *ngIf="serverElement.type==='server'" >{{serverElement.content}} </strong>
                 <em *ngIf="serverElement.type==='blueprint'">{{serverElement.content}} </em>

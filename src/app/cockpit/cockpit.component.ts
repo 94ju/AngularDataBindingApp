@@ -24,10 +24,9 @@ export class CockpitComponent implements OnInit {
     });
   }
   onAddBluePrint(nameoftheserver:HTMLInputElement){
-   
-    // this.serverCreated.emit({
-    //   serverName:nameoftheserver.value,
-    //   // serverContent:this.newServerContent
-    // });
+    this.serverCreated.emit({
+      serverName:nameoftheserver.value,
+      serverContent:this.serverContentInput.nativeElement.value
+    });
   }
 }
